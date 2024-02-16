@@ -190,6 +190,20 @@ const getPostSlug = async (req, res) => {
     });
   }
 };
+
+const getPost = async (req, res) => {
+  try {
+    const posts = await Post.find({});
+    res.status(200).send({
+      posts,
+    });
+  } catch (error) {
+    console.log(error);
+    res.send(500).send({
+      error: "Internal Server Error",
+    });
+  }
+};
 module.exports = {
   createPost,
   getAllPosts,
@@ -197,4 +211,5 @@ module.exports = {
   getSinglePost,
   updatePost,
   getPostSlug,
+  getPost,
 };

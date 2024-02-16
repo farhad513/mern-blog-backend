@@ -4,13 +4,16 @@ const {
   deletePost,
   getSinglePost,
   updatePost,
-  getPostSlug
+  getPostSlug,
+  getPost,
 } = require("../controllers/postController");
 const { isAuth } = require("../middleware/authMiddleware");
 const router = require("express").Router();
 router.post("/post/create", isAuth, createPost);
 
 router.get("/post/get-post", getAllPosts);
+
+router.get("/post/getposts", getPost);
 
 router.get("/post/get/post/:slug", getPostSlug);
 
