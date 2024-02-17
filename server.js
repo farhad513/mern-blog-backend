@@ -16,6 +16,7 @@ app.use(
     credentials: true,
   })
 );
+console.log(process.env.MODE);
 app.use(morgan("dev"));
 app.use(express.json());
 app.use("/api", require("./routes/authRoute"));
