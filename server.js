@@ -18,10 +18,10 @@ app.use(
 );
 app.use(morgan("dev"));
 app.use(express.json());
-app.use("/api/v1", require("./routes/authRoute"));
-app.use("/api/v1", require("./routes/userRoute"));
-app.use("/api/v1", require("./routes/postRoute"));
-app.use("/api/v1/comment", require("./routes/commentRoute"));
+app.use("/api", require("./routes/authRoute"));
+app.use("/api", require("./routes/userRoute"));
+app.use("/api", require("./routes/postRoute"));
+app.use("/api/comment", require("./routes/commentRoute"));
 // app.use(errorMiddleware);
 // databasr configuration
 database();
